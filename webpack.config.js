@@ -32,7 +32,7 @@ module.exports = (env) => {
     plugins.push(
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: "peoduction"
+          NODE_ENV: "production"
         }
       }),
       new MiniCssExtractPlugin({
@@ -65,12 +65,10 @@ module.exports = (env) => {
         {
           test: /\.(scss|css)$/,
           use: [
-            // process.env.NODE_ENV !== 'production' ?
-            // {
-            //   loader: 'vue-style-loader',
-            // } : MiniCssExtractPlugin.loader,
-            // .loader,
-            MiniCssExtractPlugin.loader,
+            {
+              loader: !env.production ? 'vue-style-loader'
+                : MiniCssExtractPlugin.loader,
+            },
             {
               loader: 'css-loader',
               options: {
