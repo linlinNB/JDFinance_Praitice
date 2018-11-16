@@ -50,7 +50,8 @@ module.exports = (env) => {
     resolve: {
       alias: {
         'vue$': 'vue/dist/vue.esm.js',// 配置模板
-      }
+      },
+      extensions: [".js", ".json", ".vue"]
     },
     module: {
       rules: [
