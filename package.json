@@ -1,0 +1,31 @@
+{
+  "name": "imooc_jdfan_praitice",
+  "version": "1.0.0",
+  "description": "this is praitice project in imooc",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --hot --progress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "linlin",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^1.0.0",
+    "css-loader": "^1.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.10.0",
+    "px2rem-loader": "^0.1.9",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue": "^2.5.17",
+    "vue-loader": "^14.2.2",
+    "vue-router": "^3.0.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}

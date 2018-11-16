@@ -1,0 +1,12 @@
+# ignore IEEA config files
+.idea/
+/.idea
+
+# ignore node_modules
+/node_modules
+node_modules/
+
+
+# ignore finish build file
+/dist
+dist/
