@@ -29,6 +29,7 @@ module.exports = (env) => {
   ];
   // 生产环境效果
   if (env.production) {
+    console.log('----- 进入了生产环境')
     plugins.push(
       new webpack.DefinePlugin({
         'process.env': {
@@ -39,6 +40,7 @@ module.exports = (env) => {
         filename: 'style.css',
       })
     )
+    console.log('---- 当前的plugins = ', plugins)
   }
 
   return {
@@ -64,11 +66,10 @@ module.exports = (env) => {
           use: ['vue-loader'],
         },
         {
-          test: /\.(scss|css)$/,
+          test: /\.scss$/,
           use: [
             {
-              loader: !env.production ? 'vue-style-loader'
-                : MiniCssExtractPlugin.loader,
+              loader: 'vue-style-loader',
             },
             {
               loader: 'css-loader',
@@ -80,7 +81,7 @@ module.exports = (env) => {
             {
               loader: 'px2rem-loader',
               options: {
-                remUni: 75,
+                remUni: 40,
                 remPrecision: 8
               }
             },
@@ -92,6 +93,12 @@ module.exports = (env) => {
             },
           ],
         },
+        {
+          test: /\.css$/,
+          use:
+            !env.production ? ['vue-style-loader', 'css-loader']
+              : [MiniCssExtractPlugin.loader, 'css-loader'],
+        }
       ]
     },
     plugins,
